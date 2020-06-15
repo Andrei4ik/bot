@@ -1,19 +1,15 @@
-covid19 = COVID19Py.COVID19()
-vk_session = vk_api.VkApi(token = TOKEN)
-sessionApi= vk_session.get_api()
-longpoll = VkLongPoll(vk_session)
+команды бота 
+привет
+    чтобы поздороваться
+мир
+    узнать колличество зараженных и умерших
+время 
+    чисто для теста узнать время
 
-def sender(id,text):
-    vk_session.method('messages.send',{'user_id': id, 'message' : text, 'random_id' : 0})
+библиотеки 
+COVID19Py
+Vk_api
+bs4
 
-latest = covid19.getLatest()
-
-for event in longpoll.listen():
-    if event.type == VkEventType.MESSAGE_NEW:
-        if event.to_me:
-
-            msg = event.text.lower()
-            id = event.user_id
-
-            if msg == 'мир':
-                sender(id, latest)
+Для того чтобы использовать бота нужно найти в вк сообщество
+CovidBOT и написать ему в личку 
